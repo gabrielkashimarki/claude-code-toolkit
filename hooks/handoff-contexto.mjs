@@ -79,10 +79,23 @@ try {
     process.exit(0);
   }
 
-  const conteudo = fs.readFileSync(transcript, 'utf8');
-  const todasLinhas = conteudo.endsWith('\n')
-    ? conteudo.slice(0, -1).split(/\r?\n/)
-    : conteudo.split(/\r?\n/);
+  // transcript passa de 100 MB: le so cabeca e cauda, como o head/tail do .sh.
+  // Linha cortada na borda do trecho nao e JSON valido e cai fora sozinha.
+  const TRECHO = 8 * 1024 * 1024;
+  function lerTrecho(inicio, tamanho) {
+    const fd = fs.openSync(transcript, 'r');
+    try {
+      const buf = Buffer.alloc(tamanho);
+      const lidos = fs.readSync(fd, buf, 0, tamanho, inicio);
+      return buf.toString('utf8', 0, lidos);
+    } finally {
+      fs.closeSync(fd);
+    }
+  }
+  const linhas = (texto) => texto.replace(/\n$/, '').split(/\r?\n/);
+  const tamanho = fs.statSync(transcript).size;
+  const cabeca = linhas(lerTrecho(0, Math.min(tamanho, TRECHO)));
+  const cauda = tamanho <= TRECHO ? cabeca : linhas(lerTrecho(tamanho - TRECHO, TRECHO));
 
   function extrairTokens(linha) {
     if (!linha || !linha.trim()) return null;
@@ -104,7 +117,7 @@ try {
   }
 
   // maior contexto visto nas ultimas linhas do transcript, ignorando subagentes
-  const ultimas80 = todasLinhas.slice(-80);
+  const ultimas80 = cauda.slice(-80);
   let tokens = 0;
   let encontrouTokens = false;
   for (const linha of ultimas80) {
@@ -120,7 +133,7 @@ try {
   // piso da sessao: primeiro usage do transcript. E o custo fixo do prompt (system,
   // schemas de tool, listagem de MCP), que nao e trabalho acumulado. Sem descontar,
   // uma sessao com muitos MCP ja nasce acima do limiar e dispara na primeira tool call.
-  const primeiras80 = todasLinhas.slice(0, 80);
+  const primeiras80 = cabeca.slice(0, 80);
   let base = null;
   for (const linha of primeiras80) {
     const valor = extrairTokens(linha);
