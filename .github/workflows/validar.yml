@@ -31,3 +31,11 @@ jobs:
       - name: Teste do revezamento de contas agy
         shell: bash
         run: bash scripts/teste-agy-rodar.sh
+      - name: Autoteste das regras de ESLint
+        shell: bash
+        run: |
+          cp -r templates/eslint "$RUNNER_TEMP/eslint"
+          cd "$RUNNER_TEMP/eslint"
+          npm init -y >/dev/null
+          npm i --no-save --no-audit --no-fund eslint@9
+          node verify.mjs ./eslint-rules/index.cjs
