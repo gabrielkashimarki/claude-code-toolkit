@@ -17,7 +17,6 @@ Sem estes itens o kit não funciona: os hooks não rodam, os plugins não carreg
 | Gerenciador | instalar o resto | [Homebrew](https://brew.sh) | winget (já vem no Windows 11) |
 | git | tudo | `brew install git` | `winget install Git.Git` |
 | bash | hooks e scripts | já vem | vem com o Git for Windows (Git Bash) |
-| jq | hooks leem JSON | `brew install jq` | `winget install jqlang.jq` |
 | gh | PR, issue, repo | `brew install gh` | `winget install GitHub.cli` |
 | fnm + Node 22+ | hooks dos plugins, Codex, MCPs via npx | `brew install fnm` e `fnm install --lts` | `winget install Schniz.fnm` e `fnm install --lts` |
 | Python 3.11 a 3.13 | claude-security, graphify, skills de vídeo | `brew install python@3.13` | `winget install Python.Python.3.13` |
@@ -50,6 +49,8 @@ O `agy` é binário nativo: **não precisa de Node**. Instala em `~/.local/bin`.
 | RTK | corta tokens da saída de comandos | `brew install rtk-ai/tap/rtk` | binário da [release oficial](https://github.com/rtk-ai/rtk/releases) |
 | Docker | semgrep alternativo, bancos locais | `brew install colima docker docker-compose` (ou Docker Desktop) | `winget install Docker.DockerDesktop` |
 | ripgrep, fd | busca rápida | `brew install ripgrep fd` | `winget install BurntSushi.ripgrep.MSVC sharkdp.fd` |
+| jq | aia-harness, scripts de terminal que leem JSON | `brew install jq` | `winget install jqlang.jq` |
+| agent-browser | navegador por CLI para agente ([ficha](ferramentas/navegador.md)) | `npm i -g agent-browser` e `agent-browser install` | igual |
 | pnpm | projetos que pedem pnpm | `corepack enable pnpm` | igual |
 
 ## O que não roda no Windows (e o que fazer)

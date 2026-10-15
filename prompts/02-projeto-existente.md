@@ -61,6 +61,7 @@ Specs e planos vão para onde o ~/.claude/CLAUDE.md mandar (vault ou pasta de do
 - skills de framework no escopo do projeto (ex: Next/React: npx skills add vercel-labs/agent-skills), sem duplicar o que já está global.
 - .mcp.json do projeto só com servidor que o projeto inteiro usa; segredo por op run (templates/mcp.json.example).
 - Next + Supabase: compare com templates/next/ (env validado com Zod, logger sem segredo, cliente Supabase no servidor). Adote só o que encaixa no que existe. Não rode scaffold sobre o projeto nem troque o ORM para igualar o exemplo.
+- Regras de ESLint (templates/eslint): em projeto com legado, meça por regra, comece em "warn" com a lista "ignore" dos arquivos já grandes e só vire "error" quando a contagem zerar. Nunca ligue em "error" quebrando o lint que hoje passa.
 
 ## 6. Delegação
 
@@ -81,7 +82,7 @@ Resposta final:
 - o que depende de mim;
 - comandos para rodar o projeto.
 
-Termine sugerindo de 3 a 8 rodadas de revisão, com o número justificado numa frase pelo tamanho e risco da mudança. Cada rodada tem um foco diferente (requisitos, regressão, segurança e dados, integração, UX, desempenho, clareza). Entregue um prompt pronto para colar, com o número, os focos e os checks reais. A sugestão não autoriza rodar as revisões sozinho.
+Termine sugerindo de 3 a 8 rodadas de revisão, com o número justificado numa frase pelo tamanho e risco da mudança. Cada rodada tem um foco diferente (requisitos, regressão, segurança e dados, integração, UX, desempenho, clareza). Entregue um prompt pronto para colar, com o número, os focos e os checks reais. Para rodada de revisão ampla use o painel do prompts/04-revisao-em-painel.md. A sugestão não autoriza rodar as revisões sozinho.
 ```
 
 Estrutura e convenção de revisão adaptadas do prompt de projeto existente do [vibe-coding-toolkit](https://github.com/soumatheusgomes/vibe-coding-toolkit/blob/main/docs/prompts/12-existing-project-setup.md) (MIT).

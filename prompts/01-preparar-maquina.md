@@ -57,7 +57,7 @@ Rode `node scripts/doctor.mjs --json` da cópia do kit, se o Node já existir, e
 
 Instale quando faltar, atualize quando estiver velho, configure para uso. Só conferir que existe não basta.
 
-Sistema: git; bash (no Windows, Git for Windows); jq; gh; ripgrep; fd.
+Sistema: git; bash (no Windows, Git for Windows); gh; ripgrep; fd.
 Runtimes: fnm com Node LTS (22 ou mais) como padrão e troca automática por projeto; npm; Python 3.11 a 3.13; uv.
 Agentes: Claude Code; Codex CLI (`@openai/codex`); Antigravity CLI (`agy`, binário nativo, sem Node).
 Segredos: 1Password CLI (`op`).

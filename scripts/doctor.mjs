@@ -14,7 +14,7 @@ const HOME = homedir();
 const FERRAMENTAS = [
   { id: "git", obrigatorio: true, cmd: [["git", "--version"]] },
   { id: "bash", obrigatorio: true, cmd: [["bash", "--version"]], dica: "Windows: instale o Git for Windows" },
-  { id: "jq", obrigatorio: true, cmd: [["jq", "--version"]] },
+  { id: "jq", obrigatorio: false, cmd: [["jq", "--version"]] },
   { id: "gh", obrigatorio: true, cmd: [["gh", "--version"]] },
   { id: "node", obrigatorio: true, cmd: [["node", "--version"]], min: "22" },
   { id: "npm", obrigatorio: true, cmd: [["npm", "--version"]] },
