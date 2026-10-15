@@ -45,7 +45,7 @@ const PLUGINS = [
 ];
 const MCPS = ["context7", "chrome-devtools"];
 const SKILLS = ["handoff-auto", "humanizer-ptbr"];
-const HOOKS = ["handoff-toggle.sh", "handoff-contexto.sh"];
+const HOOKS = ["handoff-toggle.mjs", "handoff-contexto.mjs"];
 
 export function extrairVersao(texto) {
   const m = String(texto).match(/(\d+)\.(\d+)(?:\.(\d+))?/);

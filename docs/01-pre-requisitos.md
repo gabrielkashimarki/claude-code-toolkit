@@ -56,7 +56,7 @@ O `agy` é binário nativo: **não precisa de Node**. Instala em `~/.local/bin`.
 
 | Item | Problema | Saída |
 |---|---|---|
-| Hooks (`hooks/*.sh`, superpowers, claude-security) | precisam de bash | Instale o Git for Windows. Sem ele o hook do superpowers falha calado. |
+| Hooks do superpowers e do claude-security | precisam de bash (os hooks de handoff do kit são Node e não precisam) | Instale o Git for Windows. Sem ele o hook do superpowers falha calado. |
 | `python3` nos hooks do claude-security e do hookify | no Windows o comando costuma ser `python` ou `py` | Rode `python3 --version` no Git Bash. Se falhar, desative o alias da Microsoft Store em "Aliases de execução do aplicativo" e reinstale pelo winget. |
 | Skills instaladas como symlink | Windows exige Modo de Desenvolvedor | Ligue o Modo de Desenvolvedor ou instale com `--copy` (`npx skills add ... --copy`). |
 | Caminho absoluto `/Users/...` em `settings.json` ou `.mcp.json` | não existe no Windows | Use `$HOME` ou `~`. O `validar.mjs` reprova caminho absoluto neste repo. |

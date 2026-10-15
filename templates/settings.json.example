@@ -4,13 +4,13 @@
   },
   "hooks": {
     "UserPromptSubmit": [
-      { "hooks": [ { "type": "command", "command": "$HOME/.claude/hooks/handoff-toggle.sh", "timeout": 5 } ] }
+      { "hooks": [ { "type": "command", "command": "node \"$HOME/.claude/hooks/handoff-toggle.mjs\"", "timeout": 5 } ] }
     ],
     "PostToolUse": [
-      { "hooks": [ { "type": "command", "command": "$HOME/.claude/hooks/handoff-contexto.sh", "timeout": 10 } ] }
+      { "hooks": [ { "type": "command", "command": "node \"$HOME/.claude/hooks/handoff-contexto.mjs\"", "timeout": 10 } ] }
     ],
     "Stop": [
-      { "hooks": [ { "type": "command", "command": "$HOME/.claude/hooks/handoff-contexto.sh", "timeout": 10 } ] }
+      { "hooks": [ { "type": "command", "command": "node \"$HOME/.claude/hooks/handoff-contexto.mjs\"", "timeout": 10 } ] }
     ]
   },
   "permissions": {

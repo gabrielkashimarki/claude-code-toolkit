@@ -27,8 +27,7 @@ jobs:
       - name: Doctor roda no sistema (sem exigir a base)
         run: node scripts/doctor.mjs --nao-falhar
       - name: Teste do hook de handoff
-        shell: bash
-        run: bash hooks/teste-handoff-contexto.sh
+        run: node hooks/teste-handoff.mjs
       - name: Teste do revezamento de contas agy
         shell: bash
         run: bash scripts/teste-agy-rodar.sh

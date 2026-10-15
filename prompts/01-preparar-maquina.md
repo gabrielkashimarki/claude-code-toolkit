@@ -67,7 +67,7 @@ superpowers, ponytail, caveman, codex, claude-security, feature-dev, typesafe.
 
 MCPs no escopo do usuário: Context7 e chrome-devtools (comandos em docs/ferramentas/mcps.md).
 
-Hooks e skills do kit: copie hooks/handoff-*.sh para ~/.claude/hooks/, skills/handoff-auto e skills/humanizer-ptbr para ~/.claude/skills/ (cópia, não symlink, no Windows). Junte o bloco hooks de templates/settings.json.example ao ~/.claude/settings.json existente, sem apagar hooks que já estão lá e sem duplicar os do kit.
+Hooks e skills do kit: copie hooks/handoff-*.mjs para ~/.claude/hooks/, skills/handoff-auto e skills/humanizer-ptbr para ~/.claude/skills/ (cópia, não symlink, no Windows). Junte o bloco hooks de templates/settings.json.example ao ~/.claude/settings.json existente, sem apagar hooks que já estão lá e sem duplicar os do kit.
 
 Use o instalador oficial de cada ferramenta (tabela em docs/01-pre-requisitos.md). Confira nome e autor antes de instalar: pacote com nome parecido não é o mesmo. Não instale a mesma ferramenta por dois gerenciadores. Preserve o método de instalação que já existe quando ele funciona.
 
@@ -94,7 +94,7 @@ Abra o fluxo oficial e diga exatamente o que eu tenho que fazer para: `claude` (
 
 Num terminal novo, sem variável temporária:
 - `node scripts/doctor.mjs` sem item obrigatório faltando;
-- `bash hooks/teste-handoff-contexto.sh` imprime OK;
+- `node hooks/teste-handoff.mjs` imprime OK;
 - `claude plugin list` mostra os plugins da base ligados;
 - `claude mcp list` mostra Context7 e chrome-devtools conectados;
 - troca de versão do Node por projeto funciona e volta ao padrão;

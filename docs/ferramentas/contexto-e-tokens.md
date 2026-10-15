@@ -14,12 +14,12 @@ Instalar:
 
 ```bash
 mkdir -p ~/.claude/hooks ~/.claude/skills
-cp hooks/handoff-*.sh ~/.claude/hooks/
+cp hooks/handoff-*.mjs ~/.claude/hooks/
 cp -R skills/handoff-auto ~/.claude/skills/
-bash hooks/teste-handoff-contexto.sh
+node hooks/teste-handoff.mjs
 ```
 
-Depois junte o bloco `hooks` de [templates/settings.json.example](../../templates/settings.json.example) ao seu `~/.claude/settings.json`, sem apagar hooks que já existem. Precisa de bash e jq; no Windows, de Git Bash e `jq` no PATH. Sem jq o hook sai calado, sem quebrar nada.
+Depois junte o bloco `hooks` de [templates/settings.json.example](../../templates/settings.json.example) ao seu `~/.claude/settings.json`, sem apagar hooks que já existem. Só precisa de Node, que a base já tem: roda igual no macOS e no Windows, sem bash e sem jq. Se der erro, o hook sai calado, sem quebrar a sessão.
 
 ## RTK
 
