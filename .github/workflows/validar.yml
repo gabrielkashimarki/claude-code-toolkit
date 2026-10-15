@@ -29,3 +29,6 @@ jobs:
       - name: Teste do hook de handoff
         shell: bash
         run: bash hooks/teste-handoff-contexto.sh
+      - name: Teste do revezamento de contas agy
+        shell: bash
+        run: bash scripts/teste-agy-rodar.sh

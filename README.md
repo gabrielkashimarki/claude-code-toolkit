@@ -86,7 +86,7 @@ prompts/         prompts para colar no agente
 templates/       AGENTS.md, CLAUDE.md, settings.json, .mcp.json, manifesto, Next + Supabase
 hooks/           handoff automático por tamanho de contexto (bash + jq)
 skills/          skills próprias: handoff-auto, humanizer-ptbr
-scripts/         doctor.mjs (confere a máquina) e validar.mjs (CI do próprio kit)
+scripts/         doctor.mjs (confere a máquina), validar.mjs (CI do kit), agy-conta.sh e agy-rodar.sh (contas agy)
 ```
 
 ## Créditos e licença
