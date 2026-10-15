@@ -1,0 +1,11 @@
+// src/lib/logger.ts: logger do servidor. Nunca importe em componente de cliente.
+import pino from "pino";
+import { env } from "./env";
+
+export const logger = pino({
+  level: env.LOG_LEVEL,
+  redact: {
+    paths: ["*.password", "*.token", "*.secret", "*.authorization", "req.headers.cookie", "req.headers.authorization"],
+    censor: "[removido]",
+  },
+});

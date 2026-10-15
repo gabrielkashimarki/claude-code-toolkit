@@ -1,0 +1,46 @@
+{
+  "env": {
+    "CLAUDE_HANDOFF_LIMIAR": "250000"
+  },
+  "hooks": {
+    "UserPromptSubmit": [
+      { "hooks": [ { "type": "command", "command": "$HOME/.claude/hooks/handoff-toggle.sh", "timeout": 5 } ] }
+    ],
+    "PostToolUse": [
+      { "hooks": [ { "type": "command", "command": "$HOME/.claude/hooks/handoff-contexto.sh", "timeout": 10 } ] }
+    ],
+    "Stop": [
+      { "hooks": [ { "type": "command", "command": "$HOME/.claude/hooks/handoff-contexto.sh", "timeout": 10 } ] }
+    ]
+  },
+  "permissions": {
+    "allow": [
+      "Bash(agy:*)",
+      "Bash(op read:*)",
+      "Bash(op run:*)",
+      "Bash(op inject:*)"
+    ]
+  },
+  "enabledPlugins": {
+    "superpowers@superpowers-dev": true,
+    "ponytail@ponytail": true,
+    "caveman@caveman": true,
+    "codex@openai-codex": true,
+    "claude-security@claude-plugins-official": true,
+    "feature-dev@claude-plugins-official": true,
+    "typesafe@typesafe-ai": true,
+    "code-review@claude-plugins-official": false,
+    "pr-review-toolkit@claude-plugins-official": false,
+    "hookify@claude-plugins-official": false,
+    "figma@claude-plugins-official": false,
+    "vercel-plugin@vercel": false
+  },
+  "extraKnownMarketplaces": {
+    "superpowers-dev": { "source": { "source": "github", "repo": "obra/superpowers" } },
+    "ponytail": { "source": { "source": "github", "repo": "DietrichGebert/ponytail" } },
+    "caveman": { "source": { "source": "github", "repo": "JuliusBrussee/caveman" } },
+    "openai-codex": { "source": { "source": "github", "repo": "openai/codex-plugin-cc" } },
+    "typesafe-ai": { "source": { "source": "github", "repo": "typesafe-ai/skills" } },
+    "vercel": { "source": { "source": "github", "repo": "vercel/vercel-plugin" } }
+  }
+}

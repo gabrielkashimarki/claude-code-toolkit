@@ -1,0 +1,31 @@
+name: validar
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validar:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validar repositório
+        run: node scripts/validar.mjs
+      - name: Autoteste do doctor
+        run: node scripts/doctor.mjs --autoteste
+      - name: Doctor roda no sistema (sem exigir a base)
+        run: node scripts/doctor.mjs --nao-falhar
+      - name: Teste do hook de handoff
+        shell: bash
+        run: bash hooks/teste-handoff-contexto.sh

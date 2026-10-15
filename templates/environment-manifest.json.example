@@ -1,0 +1,66 @@
+{
+  "formato": 1,
+  "modelo": true,
+  "gerado_em": null,
+  "toolkit_commit": null,
+  "ambiente": {
+    "so": null,
+    "versao_so": null,
+    "arquitetura": null,
+    "contexto": "nativo | wsl | vm | remoto",
+    "shell": null,
+    "gerenciador_pacotes": "homebrew | winget"
+  },
+  "componentes": [
+    { "id": "git", "obrigatorio": true, "status": "pendente", "versao": null, "caminho": null, "instalacao": null, "atualizacao": null, "notas": [] },
+    { "id": "bash", "obrigatorio": true, "status": "pendente", "versao": null, "caminho": null, "instalacao": null, "atualizacao": null, "notas": ["No Windows vem do Git for Windows."] },
+    { "id": "jq", "obrigatorio": true, "status": "pendente", "versao": null, "caminho": null, "instalacao": null, "atualizacao": null, "notas": [] },
+    { "id": "gh", "obrigatorio": true, "status": "pendente", "versao": null, "caminho": null, "instalacao": null, "atualizacao": null, "notas": [] },
+    { "id": "fnm", "obrigatorio": true, "status": "pendente", "versao": null, "caminho": null, "instalacao": null, "atualizacao": null, "notas": [] },
+    { "id": "node", "obrigatorio": true, "status": "pendente", "versao": null, "caminho": null, "instalacao": null, "atualizacao": null, "notas": ["LTS 22 ou mais como padrão."] },
+    { "id": "python", "obrigatorio": true, "status": "pendente", "versao": null, "caminho": null, "instalacao": null, "atualizacao": null, "notas": ["3.11 a 3.13. Registrar o nome do comando que funciona no bash."] },
+    { "id": "uv", "obrigatorio": true, "status": "pendente", "versao": null, "caminho": null, "instalacao": null, "atualizacao": null, "notas": [] },
+    { "id": "claude", "obrigatorio": true, "status": "pendente", "versao": null, "caminho": null, "instalacao": null, "atualizacao": null, "notas": [] },
+    { "id": "codex", "obrigatorio": true, "status": "pendente", "versao": null, "caminho": null, "instalacao": null, "atualizacao": null, "notas": [] },
+    { "id": "agy", "obrigatorio": false, "status": "pendente", "versao": null, "caminho": null, "instalacao": null, "atualizacao": null, "notas": ["Quantas contas e se usa agy-conta.sh (só macOS)."] },
+    { "id": "op", "obrigatorio": true, "status": "pendente", "versao": null, "caminho": null, "instalacao": null, "atualizacao": null, "notas": ["Conta pessoal ou conta de serviço. Nunca registrar o token."] }
+  ],
+  "plugins": [
+    { "id": "superpowers@superpowers-dev", "ligado": null, "versao": null },
+    { "id": "ponytail@ponytail", "ligado": null, "versao": null },
+    { "id": "caveman@caveman", "ligado": null, "versao": null },
+    { "id": "codex@openai-codex", "ligado": null, "versao": null },
+    { "id": "claude-security@claude-plugins-official", "ligado": null, "versao": null },
+    { "id": "feature-dev@claude-plugins-official", "ligado": null, "versao": null },
+    { "id": "typesafe@typesafe-ai", "ligado": null, "versao": null }
+  ],
+  "mcps": [
+    { "id": "context7", "escopo": "user", "conectado": null },
+    { "id": "chrome-devtools", "escopo": "user", "conectado": null }
+  ],
+  "skills": [
+    { "id": "handoff-auto", "origem": "toolkit", "instalada_como": "copia | symlink" },
+    { "id": "humanizer-ptbr", "origem": "toolkit", "instalada_como": "copia | symlink" }
+  ],
+  "hooks": [
+    { "id": "handoff-toggle", "evento": "UserPromptSubmit", "testado": null },
+    { "id": "handoff-contexto", "evento": "PostToolUse, Stop", "testado": null }
+  ],
+  "opcionais": [],
+  "configuracao": {
+    "arquivos_shell": [],
+    "node_padrao": null,
+    "troca_node_por_projeto": null,
+    "preferencias": {
+      "ponytail": "full",
+      "caveman": "full",
+      "idioma": "pt-BR",
+      "codigo_docs_commits_redacao_normal": true,
+      "trocar_provedor_ou_cobranca_sem_pedir": false
+    },
+    "limiar_handoff": 250000,
+    "backups": []
+  },
+  "validacao": [],
+  "pendencias": []
+}

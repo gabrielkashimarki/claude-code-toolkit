@@ -1,0 +1,20 @@
+# Segredos e ambiente
+.env
+.env.*
+*.pem
+*.key
+
+# Dependências e gerados
+node_modules/
+.next/
+dist/
+build/
+coverage/
+graphify-out/
+*.lock
+package-lock.json
+pnpm-lock.yaml
+
+# Skills e ferramentas vendorizadas
+.claude/skills/
+.agents/

@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "context7": {
+      "type": "http",
+      "url": "https://mcp.context7.com/mcp"
+    },
+    "exemplo-com-segredo": {
+      "type": "stdio",
+      "command": "op",
+      "args": ["run", "--no-masking", "--", "npx", "-y", "<pacote-do-mcp>@latest"],
+      "env": {
+        "API_TOKEN": "op://<Cofre>/<Item>/credential"
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+# [Nome do projeto]
+
+[Uma linha: o que o produto faz e para quem.]
+
+## Comandos
+
+Use os comandos reais. Check que não existe fica marcado como indisponível, sem inventar script.
+
+- Instalar: `[comando]`
+- Rodar local: `[comando]`
+- Lint: `[comando]`
+- Tipos: `[comando]`
+- Testes: `[comando ou "indisponível: motivo"]`
+- Build: `[comando]`
+
+## Stack
+
+[Framework, versões, runtime, gerenciador, banco. Ex: Next.js 16 na Vercel, Supabase com RLS por organização, pnpm.]
+
+## Acordos
+
+- Ler o código e as instruções pertinentes antes de editar. Hipótese que muda escopo é dita antes.
+- Menor mudança que resolve. Reusar padrão, componente e dependência que já existem.
+- Nunca afrouxar validação, tratamento de erro, segurança ou acessibilidade para simplificar.
+- Correção de bug começa pela causa, com reprodução e teste de regressão quando der.
+- Rodar os checks antes de dizer que terminou. Não apresentar o que não foi testado como testado.
+- Publicar, mandar mensagem, gastar ou apagar sem volta pede autorização. Ter a ferramenta instalada não é autorização.
+
+## Continuidade
+
+- Bloqueio trava só o que depende dele. O resto que é seguro e autorizado continua.
+- Ao retomar de handoff, conferir git, arquivos e processos reais antes de confiar no documento.
+- Não repetir a mesma tentativa sem evidência nova.
+
+## Delegação
+
+- Trabalho mecânico vai para agy ou Codex, cada um no próprio worktree, um escritor por arquivo.
+- Ao delegar, repassar: reler o arquivo antes de escrever e editar só o trecho.
+- O coordenador lê o diff e roda os checks antes de aceitar.
+- Depois de cada ciclo de implementação, sugerir de 3 a 8 rodadas de revisão com focos diferentes. Sugerir não autoriza rodar.
+
+## Segredos
+
+Nenhum segredo em arquivo, log ou commit. `.env` tem só referências `op://` e roda com `op run --env-file=.env -- <comando>`.
+
+## Onde está o resto
+
+[Links curtos: arquitetura, decisões, onde ficam specs e planos. Este arquivo fica curto.]

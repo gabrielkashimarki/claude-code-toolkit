@@ -1,0 +1,24 @@
+// src/lib/supabase/server.ts: cliente Supabase para Server Components, Server Actions e Route Handlers.
+// Usa a chave publicável e a sessão do usuário (cookies), então a RLS vale normalmente.
+import { createServerClient } from "@supabase/ssr";
+import { cookies } from "next/headers";
+import { env } from "@/lib/env";
+
+export async function criarClienteServidor() {
+  const cookieStore = await cookies();
+
+  return createServerClient(env.NEXT_PUBLIC_SUPABASE_URL, env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY, {
+    cookies: {
+      getAll() {
+        return cookieStore.getAll();
+      },
+      setAll(cookiesParaGravar) {
+        try {
+          cookiesParaGravar.forEach(({ name, value, options }) => cookieStore.set(name, value, options));
+        } catch {
+          // Chamado de Server Component, onde não dá para gravar cookie. O middleware renova a sessão.
+        }
+      },
+    },
+  });
+}
