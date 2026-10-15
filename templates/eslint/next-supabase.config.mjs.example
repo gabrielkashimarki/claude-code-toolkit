@@ -1,0 +1,27 @@
+// Adaptado de vibe-coding-toolkit (MIT), Copyright (c) 2026 Matheus Gomes.
+// Componente e página chamam módulos de dados (ex: src/features/<area>/dados.ts), e só esses módulos importam o cliente Supabase;
+// o logger fica isento por override de arquivo; o arquivo do logger e src/lib/supabase/** entram num bloco com a regra desligada.
+import { defineConfig } from "eslint/config";
+import base from "./eslint-rules/next-base.mjs";
+
+export default defineConfig([
+  ...base,
+  {
+    files: ["src/**/*.{ts,tsx}"],
+    rules: {
+      "quality/no-direct-console": ["error", { logger: "o logger do servidor (src/lib/logger.ts)" }],
+      "quality/no-direct-data-access": ["error", {
+        modules: ["@supabase/supabase-js", "@supabase/ssr", "@/lib/supabase/server", "@/lib/supabase/client"],
+        bindings: ["createClient", "createServerClient", "createBrowserClient", "criarClienteServidor", "criarClienteNavegador"],
+        layers: ["/src/app/", "/src/components/"], extensions: [".tsx"],
+      }],
+    },
+  },
+  {
+    files: ["src/lib/logger.ts", "src/lib/supabase/**"],
+    rules: {
+      "quality/no-direct-console": "off",
+      "quality/no-direct-data-access": "off",
+    },
+  },
+]);

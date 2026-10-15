@@ -1,0 +1,3 @@
+// Adaptado de vibe-coding-toolkit (MIT), Copyright (c) 2026 Matheus Gomes.
+// Perfil Next.js mínimo; copie eslint-rules/ junto desta configuração.
+export { default } from "./eslint-rules/next-base.mjs";
