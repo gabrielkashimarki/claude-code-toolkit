@@ -46,4 +46,12 @@ rclone check "meudrive,root_folder_id=ID_DA_PASTA:" "meudrive,team_drive=ID_DO_D
 
 O `check` compara tamanho e hash de cada arquivo. Se terminar com `0 differences found`, a cópia está completa.
 
+Compare também a contagem com o `rclone size` da origem. O Drive aceita dois arquivos com o mesmo nome na mesma pasta, e o rclone copia só um deles: o log avisa `Duplicate object found in source - ignoring` e o `check` não acusa a falta. Para trazer os que ficaram para trás, copie cada um pelo ID com nome novo:
+
+```bash
+rclone backend copyid "meudrive,team_drive=ID_DO_DRIVE:" ID_DO_ARQUIVO "meudrive,team_drive=ID_DO_DRIVE:Destino/Nome/foto (2).jpg"
+```
+
+O destino do `copyid` precisa do prefixo do remoto. Sem ele, o rclone entende como caminho local e baixa o arquivo para a pasta onde o comando rodou.
+
 `copy` nunca apaga nada no destino. `sync` apaga no destino o que não existe na origem: use `copy` a menos que queira um espelho exato, e só com `--dry-run` antes.
