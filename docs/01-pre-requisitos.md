@@ -52,6 +52,7 @@ O `agy` é binário nativo: **não precisa de Node**. Instala em `~/.local/bin`.
 | jq | aia-harness, scripts de terminal que leem JSON | `brew install jq` | `winget install jqlang.jq` |
 | agent-browser | navegador por CLI para agente ([ficha](ferramentas/navegador.md)) | `npm i -g agent-browser` e `agent-browser install` | igual |
 | pnpm | projetos que pedem pnpm | `corepack enable pnpm` | igual |
+| rclone | copiar e conferir arquivos entre Drives e nuvens ([ficha](ferramentas/rclone.md)) | `brew install rclone` | `winget install Rclone.Rclone` |
 
 ## O que não roda no Windows (e o que fazer)
 

@@ -32,6 +32,7 @@ const FERRAMENTAS = [
   { id: "docker", obrigatorio: false, cmd: [["docker", "--version"]] },
   { id: "rg", obrigatorio: false, cmd: [["rg", "--version"]] },
   { id: "semgrep", obrigatorio: false, cmd: [["semgrep", "--version"]] },
+  { id: "rclone", obrigatorio: false, cmd: [["rclone", "version"]] },
 ];
 
 const PLUGINS = [

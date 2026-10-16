@@ -8,6 +8,7 @@
 | [Delegação](delegacao.md) | Codex, agy, várias contas agy, regras para agente delegado, revisão em rodadas |
 | [Contexto e tokens](contexto-e-tokens.md) | hook de handoff, RTK, graphify, Context7, caveman, medição do piso |
 | [Navegador](navegador.md) | browser do app, Claude in Chrome, chrome-devtools, agent-browser: quando usar cada um |
+| [rclone](rclone.md) | cópia servidor a servidor entre Drives, conferência depois da cópia |
 | [Regras de ESLint](../../templates/eslint/README.md) | `max-lines`, logger no lugar de `console`, acesso a dados fora do componente, perfil Next + Supabase |
 | [Memória e segredos](memoria-e-segredos.md) | memória em camadas, vault, 1Password CLI, conta de serviço |
 
