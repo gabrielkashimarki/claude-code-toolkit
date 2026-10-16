@@ -32,6 +32,10 @@ Três regras seguram o resto:
 | Passagem entre sessões | `~/.claude/handoffs/` | Descartável; o que importa vai para a nota de sessão |
 | Segredo | 1Password | No arquivo vai só `op://Cofre/Item/campo` |
 
+## Entregar arquivo no Mac
+
+Quando o Claude salva um arquivo que você vai abrir, importar ou anexar em outro app, peça no `~/.claude/CLAUDE.md` que ele rode `open -R <caminho>` depois de salvar. É um comando nativo do macOS: abre o Finder com o arquivo já selecionado e não executa nada. Não precisa instalar nada.
+
 ## Global ou projeto
 
 Plugin, skill de uso geral e hook de sessão vão no global (`~/.claude`), porque servem a todo projeto. O que depende da stack (lint, skills de framework, MCP do banco) vai no projeto. Skill instalada nos dois lugares carrega duas vezes e gasta contexto à toa: o prompt 02 procura e remove duplicata.
