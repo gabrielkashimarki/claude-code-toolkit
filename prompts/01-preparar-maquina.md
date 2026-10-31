@@ -78,13 +78,16 @@ Se um item não tiver suporte no sistema (por exemplo semgrep nativo no Windows,
 - ponytail em full para programação;
 - caveman em full, respostas no idioma do usuário; código, documentação e commits em redação normal;
 - Context7 para documentação de biblioteca, sem mandar segredo ou código privado na consulta;
-- nada de trocar provedor, modelo ou forma de cobrança (API paga, proxy) sem eu escolher.
+- nada de trocar provedor, modelo ou forma de cobrança (API paga, proxy) sem eu escolher;
+- imagem e vídeo saem pela cota dos planos (agy, Flow pelo flow-studio, site do Gemini), nunca por API paga (ver docs/02-como-funciona.md).
 
 Se já existir ~/.claude/CLAUDE.md, preserve. Se não existir, ofereça criar a partir das regras de docs/02-como-funciona.md (onde cada coisa mora) e pergunte idioma e destino de specs e notas antes de escrever.
 
 ## 5. Opcionais
 
-Depois da base, mostre a tabela "Por skill" de docs/01-pre-requisitos.md com o que já está instalado e pergunte quais extras eu quero (ffmpeg, yt-dlp, graphify, RTK, Docker, Chrome, skills de vídeo, semgrep). Instale só o que eu escolher.
+Depois da base, mostre a tabela "Por skill" de docs/01-pre-requisitos.md com o que já está instalado e pergunte quais extras eu quero (ffmpeg, yt-dlp, graphify, RTK, Docker, Chrome, skills de vídeo, flow-studio, semgrep). Instale só o que eu escolher.
+
+Se eu escolher o flow-studio, siga a seção dele em docs/ferramentas/mcps.md, com os limites de crédito de lá, e confira só com `flow_session_info` e `flow_list_options`, que não gastam crédito. O login no Google eu faço à mão na janela que o `flow_sign_in` abre.
 
 ## 6. Login
 

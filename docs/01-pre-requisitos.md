@@ -45,7 +45,7 @@ O `agy` é binário nativo: **não precisa de Node**. Instala em `~/.local/bin`.
 | agent-reach | skill agent-reach | `uv tool install agent-reach` | igual |
 | crv | skill claude-real-video | `uv tool install "claude-real-video[whisper]"` | igual |
 | semgrep | skill semgrep | `brew install semgrep` | só via WSL ou Docker |
-| Google Chrome | chrome-devtools-mcp, web-perf | `brew install --cask google-chrome` | `winget install Google.Chrome` |
+| Google Chrome | chrome-devtools-mcp, web-perf, flow-studio | `brew install --cask google-chrome` | `winget install Google.Chrome` |
 | RTK | corta tokens da saída de comandos | `brew install rtk-ai/tap/rtk` | binário da [release oficial](https://github.com/rtk-ai/rtk/releases) |
 | Docker | semgrep alternativo, bancos locais | `brew install colima docker docker-compose` (ou Docker Desktop) | `winget install Docker.DockerDesktop` |
 | ripgrep, fd | busca rápida | `brew install ripgrep fd` | `winget install BurntSushi.ripgrep.MSVC sharkdp.fd` |

@@ -36,6 +36,16 @@ Três regras seguram o resto:
 
 Quando o Claude salva um arquivo que você vai abrir, importar ou anexar em outro app, peça no `~/.claude/CLAUDE.md` que ele rode `open -R <caminho>` depois de salvar. É um comando nativo do macOS: abre o Finder com o arquivo já selecionado e não executa nada. Não precisa instalar nada.
 
+## Imagem e vídeo pela cota do plano
+
+Ponha no `~/.claude/CLAUDE.md`: toda imagem e todo vídeo saem pela cota das assinaturas, nunca por API paga (Gemini API, OpenAI, OpenRouter, Replicate). Gerar imagem por API custa caro e o agente não avisa antes: um lote de fotos já custou cerca de R$ 15 por imagem, quando o plano fazia a mesma coisa sem custo.
+
+| Gerar | Por onde |
+|---|---|
+| Imagem | agy, pela ferramenta de imagem do agente, revezando contas com `agy-rodar.sh` ([delegação](ferramentas/delegacao.md)) |
+| Vídeo, ou imagem quando a cota do agy acabar | Google Flow pelo MCP [flow-studio](ferramentas/mcps.md#flow-studio) |
+| Sem cota em nenhum plano | parar e perguntar, sem cair para a API |
+
 ## Global ou projeto
 
 Plugin, skill de uso geral e hook de sessão vão no global (`~/.claude`), porque servem a todo projeto. O que depende da stack (lint, skills de framework, MCP do banco) vai no projeto. Skill instalada nos dois lugares carrega duas vezes e gasta contexto à toa: o prompt 02 procura e remove duplicata.

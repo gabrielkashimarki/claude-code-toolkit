@@ -22,9 +22,32 @@ O Context7 funciona sem chave, com limite menor. Com chave, guarde no 1Password 
 | MCP | Para quê | Instalar |
 |---|---|---|
 | rea | engenharia reversa de binário, bundle web e app | `npm i -g rea-agents` e `claude mcp add --scope user rea -- rea mcp` ([fonte](https://github.com/morluto/rea)) |
-| flow-studio | gerar vídeo e imagem no Google Flow pela cota do plano | clonar [mcp-google-flow](https://github.com/felipedamacenoteodoro/mcp-google-flow), build, `claude mcp add --scope user flow-studio -- node <clone>/dist/main.js` |
+| flow-studio | gerar vídeo e imagem no Google Flow pela cota do plano | ver [flow-studio](#flow-studio) abaixo |
 | Hostinger | DNS, VPS e sites da Hostinger | `npx hostinger-api-mcp@latest` com o padrão `op run` |
 | Figma, Vercel | design e deploy | vêm nos plugins `figma` e `vercel-plugin` (OAuth) |
+
+### flow-studio
+
+Usa o site do [Google Flow](https://flow.google.com) (Veo) num perfil próprio do Chrome, com a conta Google logada. Gasta os créditos do plano, não API. Precisa de Node 22+ e Google Chrome.
+
+```bash
+git clone https://github.com/felipedamacenoteodoro/mcp-google-flow.git ~/mcp-google-flow
+cd ~/mcp-google-flow && npm ci && npm run build
+mkdir -p ~/FlowStudio/input ~/FlowStudio/output
+claude mcp add --scope user flow-studio \
+  -e FLOW_MCP_MAX_CREDITS=30 \
+  -e FLOW_MCP_PAID_PER_HOUR=4 \
+  -e FLOW_MCP_LANGUAGE=pt-BR \
+  -e FLOW_MCP_INPUT_DIRS="$HOME/FlowStudio/input" \
+  -e FLOW_MCP_OUTPUT_DIR="$HOME/FlowStudio/output" \
+  -- node "$HOME/mcp-google-flow/dist/main.js"
+```
+
+- **Limites:** o padrão do repositório é 100 créditos por sessão e 10 ações pagas por hora. Os valores acima seguram o gasto até alguém pedir mais. Toda geração devolve o preço antes e só gasta com `confirm=true`.
+- **Pastas:** o upload só aceita arquivo de `FLOW_MCP_INPUT_DIRS` (várias separadas por `:`, ou `;` no Windows). Para usar referências de um projeto, acrescente a pasta dele.
+- **Login:** peça ao agente `flow_sign_in`. Ele abre um Chrome comum, sem automação, e a pessoa entra na conta Google à mão. O Google recusa login em navegador automatizado, e o servidor nunca vê a senha.
+- **Conferir sem gastar:** `flow_session_info` e `flow_list_options`.
+- **Atualizar:** `git pull && npm ci && npm run build` no clone, depois reinicie a sessão.
 
 Gmail, Google Calendar, Google Drive e Notion entram como conectores do claude.ai (Configurações, Conectores) e não precisam de instalação local.
 
