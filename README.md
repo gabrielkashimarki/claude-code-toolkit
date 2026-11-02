@@ -12,6 +12,8 @@ Formato e parte das receitas vêm do [vibe-coding-toolkit](https://github.com/so
 | Projeto que já existe | [Prompt 02, adotar o kit no projeto](prompts/02-projeto-existente.md) |
 | Projeto com código morto e dependência sobrando | [Prompt 03, limpeza medida](prompts/03-limpeza.md) |
 | Revisão antes de entregar | [Prompt 04, revisão em painel](prompts/04-revisao-em-painel.md) |
+| Revisão de segurança de repositório ou diff | [Prompt 05, revisão de segurança](prompts/05-revisao-de-seguranca.md) |
+| Auditoria de segurança com lotes de correção | [Prompt 06, auditoria de segurança](prompts/06-auditoria-de-seguranca.md) |
 | Quero saber o que precisa instalar antes | [Pré-requisitos por sistema](docs/01-pre-requisitos.md) |
 | Quero entender como as peças conversam | [Como o kit funciona](docs/02-como-funciona.md) |
 | Quero ver ferramenta por ferramenta | [Catálogo](docs/ferramentas/README.md) |
@@ -94,7 +96,7 @@ scripts/         doctor.mjs (confere a máquina), validar.mjs (CI do kit), agy-c
 
 ## Créditos e licença
 
-- Estrutura, prompts de setup, projeto existente, limpeza e revisão em painel, manifesto, regras de ESLint e a convenção de 3 a 8 revisões adaptados do [vibe-coding-toolkit](https://github.com/soumatheusgomes/vibe-coding-toolkit), Copyright (c) 2026 Matheus Gomes, MIT.
+- Estrutura, prompts de setup, projeto existente, limpeza, revisão em painel, revisão e auditoria de segurança, manifesto, regras de ESLint e a convenção de 3 a 8 revisões adaptados do [vibe-coding-toolkit](https://github.com/soumatheusgomes/vibe-coding-toolkit), Copyright (c) 2026 Matheus Gomes, MIT.
 - `humanizer-ptbr` deriva do [humanizer](https://github.com/blader/humanizer), de blader, MIT.
 - Plugins e skills de terceiros não são copiados para cá: o kit aponta a fonte oficial e cada um segue a licença própria.
 
